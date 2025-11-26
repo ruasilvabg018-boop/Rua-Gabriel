@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academia Cheetah - Transforme seu corpo e vida na velocidade máxima</title>
+
+    <style>
+/* Reset e Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9fafb;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+
+
+
+/* Header */
+.header {
+    background: linear-gradient(to right, #000000, #1f2937);
+    color: white;
+    padding: 3rem 0;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.logo {
+    width: 10rem;
+    height: 10rem;
+    object-fit: contain;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.tagline {
+    color: #fbbf24;
+    font-size: 1.125rem;
+}
+
+
+
+
+/* Navigation */
+.nav {
+    background: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-list {
+    display: flex;
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+.nav-link {
+    color: #374151;
+    transition: color 0.3s;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #fbbf24;
+}
+
+/* Main Content */
+.main-content {
+    padding: 3rem 1rem;
+}
+
+.section {
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: #1f2937;
+    margin-bottom: 2rem;
+}
+
+.section-title.center {
+    text-align: center;
+}
+
+/* Grid Layouts */
+.grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.grid-4 {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* Cards */
+.card {
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+}
+
+.card-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background-color: #f3f4f6;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-content h3 {
+    color: #1f2937;
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+}
+
+.card-content p {
+    color: #6b7280;
+    margin-bottom: 0.5rem;
+}
+
+.highlight {
+    color: #fbbf24;
+    font-weight: 600;
+}
+
+/* Clientes Card */
+.card-cliente {
+    padding: 1.5rem;
+}
+
+.cliente-content {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.cliente-avatar {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    background-color: #f3f4f6;
+}
+
+.cliente-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.cliente-info h3 {
+    color: #1f2937;
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+}
+
+.cliente-info p {
+    color: #6b7280;
+    margin-bottom: 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Planos */
+.card-plano {
+    background: white;
+    position: relative;
+}
+
+.plano-destaque {
+    background: linear-gradient(to bottom, #fbbf24, #f59e0b);
+    color: white;
+    box-shadow: 0 0 0 4px rgba(251, 191, 36, 0.3);
+}
+
+.plano-badge {
+    background: #000000;
+    color: #fbbf24;
+    text-align: center;
+    padding: 0.5rem;
+    font-weight: 600;
+}
+
+.plano-content {
+    padding: 1.5rem;
+}
+
+.plano-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.plano-header h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.plano-destaque h3 {
+    color: white;
+}
+
+.plano-preco {
+    font-size: 1.875rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.plano-destaque .plano-preco {
+    color: white;
+}
+
+.plano-adesao {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.plano-destaque .plano-adesao {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.plano-beneficios {
+    border-top: 1px solid #e5e7eb;
+    padding-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.plano-destaque .plano-beneficios {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.plano-beneficios ul {
+    list-style: none;
+}
+
+.plano-beneficios li {
+    padding: 0.5rem 0;
+    color: #374151;
+}
+
+.plano-destaque .plano-beneficios li {
+    color: white;
+}
+
+.btn-plano {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    background: #000000;
+    color: #fbbf24;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-plano:hover {
+    background: #1f2937;
+}
+
+.btn-plano-destaque {
+    background: #000000;
+    color: #fbbf24;
+}
+
+.btn-plano-destaque:hover {
+    background: #1f2937;
+}
+
+/* Info Adesão */
+.info-adesao {
+    margin-top: 3rem;
+    background: #fffbeb;
+    border: 2px solid #fef3c7;
+    border-radius: 0.5rem;
+    padding: 2rem;
+}
+
+.info-adesao h3 {
+    text-align: center;
+    color: #1f2937;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    text-align: center;
+}
+
+.info-icon {
+    font-size: 2rem;
+    color: #fbbf24;
+    margin-bottom: 0.5rem;
+}
+
+.info-title {
+    color: #374151;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.info-desc {
+    color: #6b7280;
+}
+
+/* Footer */
+.footer {
+    background: #1f2937;
+    color: white;
+    padding: 2rem 0;
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.footer-horario {
+    color: #9ca3af;
+    margin-top: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 1.875rem;
+    }
+
+    .nav-list {
+        gap: 1rem;
+        font-size: 0.875rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .grid-4,
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .cliente-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .cliente-info p {
+        white-space: normal;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+    </style>
+
+
+
+
+
+
+
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <img src="https://i.pinimg.com/736x/20/59/51/2059519473de94bbf9b635dfd39136b1.jpg" alt="Cheetah" class="logo">
+                <h1>Academia Cheetah</h1>
+            </div>
+            <p class="tagline">Transforme seu corpo e vida na velocidade máxima</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="#aparelhos" class="nav-link">Aparelhos</a></li>
+                <li><a href="#clientes" class="nav-link">Clientes</a></li>
+                <li><a href="#instrutores" class="nav-link">Instrutores</a></li>
+                <li><a href="#mensalidades" class="nav-link">Mensalidades</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container main-content">
+
+        <!-- Aparelhos Section -->
+        <section id="aparelhos" class="section">
+            <h2 class="section-title">Nossos Aparelhos</h2>
+            <%Aparelhos.forEach(Aparelho=>{%>
+            <div class="grid grid-3">
+                <div class="card card-aparelho">
+                    <div class="aparelho-content">
+                        <img src="<%=Aparelho.foto%>">
+                        <div class="aparelho-info">
+                    </div>
+                    <div class="card-content">
+                        <h3><%=Aparelho.nome%></h3>
+                        <p><span class="highlight">Marca:</span> <%=Aparelho.marca%></p>
+                        <p><span class="highlight">Carga:</span> Até <%=Aparelho.carga%> Kg</p>
+                        
+                    </div>
+                </div>
+<% })%>
+               
+        </section>
+
+        <!-- Clientes Section -->
+        <section id="clientes" class="section">
+            <h2 class="section-title">Nossos Clientes</h2>
+
+            <%Clientes.forEach(Cliente=>{%>
+            <div class="grid grid-3">
+                <div class="card card-cliente">
+                    <div class="cliente-content">
+                        <img src="<%=Cliente.foto%>">
+                        <div class="cliente-info">
+                            <h3><%=Cliente.nome%></h3>
+                            <p>⏱️ <%=Cliente.tempodetreino%> anos</p>
+                            <p>✉️ <%=Cliente.email %></p>
+                        </div>
+                    </div>
+                </div>
+<%})%>
+        </section>
+
+        <!-- Instrutores Section -->
+        <section id="instrutores" class="section">
+            <h2 class="section-title">Nossos Instrutores</h2>
+            <div class="grid grid-4">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1704223523169-52feeed90365?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYWxlJTIwZml0bmVzcyUyMHRyYWluZXJ8ZW58MXx8fHwxNzYzMDU5ODMxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" alt="Marcos Ferreira">
+                    </div>
+                    <div class="card-content">
+                        <h3>Marcos Ferreira</h3>
+                        <p>💰 R$ 4.500,00</p>
+                        <p>🏆 8 anos de experiência</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1534368420009-621bfab424a8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmZW1hbGUlMjBwZXJzb25hbCUyMHRyYWluZXJ8ZW58MXx8fHwxNzYzMDU5ODMxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" alt="Fernanda Rodrigues">
+                    </div>
+                    <div class="card-content">
+                        <h3>Fernanda Rodrigues</h3>
+                        <p>💰 R$ 5.200,00</p>
+                        <p>🏆 10 anos de experiência</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1533560904424-a0c61dc306fc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaXRuZXNzJTIwdHJhaW5lciUyMG1hbnxlbnwxfHx8fDE3NjMwNjA0MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" alt="Lucas Almeida">
+                    </div>
+                    <div class="card-content">
+                        <h3>Lucas Almeida</h3>
+                        <p>💰 R$ 3.800,00</p>
+                        <p>🏆 5 anos de experiência</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1529516548873-9ce57c8f155e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHBlcnNvbmFsJTIwdHJhaW5lcnxlbnwxfHx8fDE3NjMwNjA0MTN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" alt="Beatriz Souza">
+                    </div>
+                    <div class="card-content">
+                        <h3>Beatriz Souza</h3>
+                        <p>💰 R$ 4.100,00</p>
+                        <p>🏆 6 anos de experiência</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mensalidades Section -->
+        <section id="mensalidades" class="section">
+            <h2 class="section-title center">Planos e Mensalidades</h2>
+            <div class="grid grid-4">
+                <div class="card card-plano">
+                    <div class="plano-content">
+                        <div class="plano-header">
+                            <h3>Mensal</h3>
+                            <div class="plano-preco">R$ 150,00</div>
+                            <p class="plano-adesao">📅 Qualquer dia do mês</p>
+                        </div>
+                        <div class="plano-beneficios">
+                            <ul>
+                                <li>✓ Acesso ilimitado</li>
+                                <li>✓ Todas as aulas coletivas</li>
+                                <li>✓ Avaliação física mensal</li>
+                                <li>✓ Sem fidelização</li>
+                            </ul>
+                        </div>
+                        <button class="btn-plano">💳 Assinar Plano</button>
+                    </div>
+                </div>
+
+                <div class="card card-plano plano-destaque">
+                    <div class="plano-badge">⭐ Mais Popular</div>
+                    <div class="plano-content">
+                        <div class="plano-header">
+                            <h3>Trimestral</h3>
+                            <div class="plano-preco">R$ 399,00</div>
+                            <p class="plano-adesao">📅 Qualquer dia do mês</p>
+                        </div>
+                        <div class="plano-beneficios">
+                            <ul>
+                                <li>✓ Acesso ilimitado</li>
+                                <li>✓ Todas as aulas coletivas</li>
+                                <li>✓ Avaliação física mensal</li>
+                                <li>✓ Plano personalizado</li>
+                                <li>✓ Economia de 11%</li>
+                            </ul>
+                        </div>
+                        <button class="btn-plano btn-plano-destaque">💳 Assinar Plano</button>
+                    </div>
+                </div>
+
+                <div class="card card-plano">
+                    <div class="plano-content">
+                        <div class="plano-header">
+                            <h3>Semestral</h3>
+                            <div class="plano-preco">R$ 750,00</div>
+                            <p class="plano-adesao">📅 Qualquer dia do mês</p>
+                        </div>
+                        <div class="plano-beneficios">
+                            <ul>
+                                <li>✓ Acesso ilimitado</li>
+                                <li>✓ Todas as aulas coletivas</li>
+                                <li>✓ Avaliação física quinzenal</li>
+                                <li>✓ Plano personalizado</li>
+                                <li>✓ Nutricionista gratuito</li>
+                                <li>✓ Economia de 17%</li>
+                            </ul>
+                        </div>
+                        <button class="btn-plano">💳 Assinar Plano</button>
+                    </div>
+                </div>
+
+                <div class="card card-plano">
+                    <div class="plano-content">
+                        <div class="plano-header">
+                            <h3>Anual</h3>
+                            <div class="plano-preco">R$ 1.400,00</div>
+                            <p class="plano-adesao">📅 Qualquer dia do mês</p>
+                        </div>
+                        <div class="plano-beneficios">
+                            <ul>
+                                <li>✓ Acesso ilimitado</li>
+                                <li>✓ Todas as aulas coletivas</li>
+                                <li>✓ Avaliação física semanal</li>
+                                <li>✓ Plano personalizado premium</li>
+                                <li>✓ Nutricionista + Fisioterapeuta</li>
+                                <li>✓ 1 mês grátis</li>
+                                <li>✓ Economia de 22%</li>
+                            </ul>
+                        </div>
+                        <button class="btn-plano">💳 Assinar Plano</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-adesao">
+                <h3>Informações sobre Adesão</h3>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-icon">💳</div>
+                        <p class="info-title">Pagamento facilitado</p>
+                        <p class="info-desc">Cartão, PIX ou Boleto</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">📅</div>
+                        <p class="info-title">Renovação automática</p>
+                        <p class="info-desc">Sem preocupação</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">🔄</div>
+                        <p class="info-title">Flexibilidade</p>
+                        <p class="info-desc">Cancele quando quiser</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Academia Cheetah. Todos os direitos reservados.</p>
+            <p class="footer-horario">Segunda a Sexta: 6h às 22h | Sábado: 8h às 18h | Domingo: 8h às 14h</p>
+        </div>
+    </footer>
+</body>
+</html>

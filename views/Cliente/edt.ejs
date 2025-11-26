@@ -1,0 +1,28 @@
+<%-include('../cabecalho.ejs')%>
+ <header>
+        <h3>Editar Cliente</h3>
+      </header>
+      <div class="content">
+        <form id="form-Cliente" method="post" autocomplete="off" >
+          <div class="grid">
+            <div>
+              <label for="nome">Nome do Cliente</label>
+              <input id="nome" value="<%=cliente.nome%>" name="nome" type="text" placeholder="Ex: João Silva" required>
+            </div>
+
+            <div>
+              <label for="tempodetreino">Tempo de Treino do Cliente (em anos)</label>
+              <input id="tempodetreino" value="<%=cliente.tempodetreino%>" name="tempodetreino" type="number" placeholder="Ex: 2" required>
+            </div>
+            <div>
+              <label for="email">Email do Cliente</label>
+              <input id="email" value="<%=cliente.email%>" name="email" type="email" placeholder="Ex: Joaosilva@gmail.com" required>
+            </div>
+          <footer>
+            <a type="button" class="btn ghost" id="btn-cancelar" href="/Clientes/lst">Cancelar</a>
+            <button type="submit" class="btn primary">Editar Cliente</button>
+          </footer>
+        </form>
+      </div>
+
+  <%-include('../rodape.ejs')%>

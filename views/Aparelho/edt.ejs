@@ -1,0 +1,30 @@
+<%-include('../cabecalho.ejs')%>
+ <header>
+        <h3>Editar Aparelho</h3>
+      </header>
+      <div class="content">
+        <form id="form-Instrutor" method="post" autocomplete="off" >
+          <div class="grid">
+            <div>
+              <label for="nome">Nome do Aparelho</label>
+              <input id="nome" value="<%=aparelho.nome%>" name="nome" type="text" placeholder="Ex: Rosca Scott" required>
+            </div>
+
+            <div>
+              <label for="marca">Marca do Aparelho</label>
+              <input id="marca" value="<%=aparelho.marca%>" name="marca" type="text" placeholder="Ex: Darkness" required>
+            </div>
+
+            <div>
+              <label for="carga">Carga total do Aparelho</label>
+              <input id="carga" value="<%=aparelho.carga%>" name="carga" type="number" placeholder="Ex: 100kg" required>
+            </div>
+           <div class="field-help">Os campos com * são obrigatórios.</div>
+          <footer>
+            <a type="button" class="btn ghost" id="btn-cancelar" href="/Aparelho/lst">Cancelar</a>
+            <button type="submit" class="btn primary">Editar Aparelho</button>
+          </footer>
+        </form>
+      </div>
+
+  <%-include('../rodape.ejs')%>

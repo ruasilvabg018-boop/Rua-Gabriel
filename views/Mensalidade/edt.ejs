@@ -1,0 +1,23 @@
+<%-include('../cabecalho.ejs')%>
+ <header>
+        <h3>Editar Mensalidade</h3>
+      </header>
+      <div class="content">
+        <form id="form-Mensalidade" method="post" autocomplete="off" >
+          <div class="grid">
+            <div>
+              <label for="plano">Plano da Mensalidade</label>
+              <input id="plano" value="<%=mensalidade.plano%>" name="plano" type="number" required>
+            </div>
+            <div>
+              <label for="dataadesao">Data de Término da Mensalidade</label>
+              <input id="dataadesao" value="<%=mensalidade.dataadesao%>" name="dataadesao" type="date" required>
+            </div>
+          <footer>
+            <a type="button" class="btn ghost" id="btn-cancelar" href="/Mensalidade/lst">Cancelar</a>
+            <button type="submit" class="btn primary">Editar Mensalidade</button>
+          </footer>
+        </form>
+      </div>
+
+  <%-include('../rodape.ejs')%>

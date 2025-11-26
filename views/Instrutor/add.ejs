@@ -1,0 +1,32 @@
+     <%-include('../cabecalho.ejs')%>
+     <header>
+        <h3>Adicionar Novo Instrutor</h3>
+      </header>
+      <div class="content">
+        <form id="form-Instrutor" autocomplete="off" action="/Instrutor/add/ok"
+          enctype="multipart/form-data" method="post">
+          <div class="grid">
+            <div>
+              <label for="nome">Nome do Instrutor</label>
+              <input id="nome" name="nome" type="text" required>
+            </div>
+            <div>
+              <label for="foto">Foto do Instrutor</label>
+              <input id="foto" name="foto" type="file">
+            </div>
+            <div>
+              <label for="salario">Salário do Instrutor</label>
+              <input id="salario" name="salario" type="number" required>
+            </div>
+            <div>
+              <label for="temponaarea">Tempo na Área (em anos)</label>
+              <input id="temponaarea" name="temponaarea" type="number" required>
+            </div>
+          <footer>
+            <a type="button" class="btn ghost" id="btn-cancelar" href="/Instrutors/lst">Cancelar</a>
+            <button type="submit" class="btn primary">Adicionar Instrutor</button>
+          </footer>
+        </form>
+      </div>
+
+      <%-include('../rodape.ejs')%>

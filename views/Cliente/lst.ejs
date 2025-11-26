@@ -1,0 +1,79 @@
+<%-include('../cabecalho.ejs')%>
+<section class="section">
+  <div style="display:flex; align-items:end; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+    <div>
+      <h2>Gerenciar Cliente</h2>
+    </div>
+    
+    <div class="actions">
+      <a href="/Cliente/add" class="btn primary">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 5a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H6a1 1 0 110-2h5V6a1 1 0 011-1z"/></svg>
+        Novo Cliente
+      </a>
+    </div>
+  </div>
+      <div class="tabs" role="tablist" aria-label="Seções">
+      <a class="tab" href="/Aparelho/lst">Aparelho</a>
+      <a class="tab" href="/Cliente/lst">Cliente</a>
+      <a class="tab" href="/Instrutor/lst">Instrutor</a>
+      <a class="tab" href="/Mensalidade/lst">Mensalidade</a>
+    </div>
+  <div style="flex: 0 0 auto; width: 70%;">
+<form action="" method="post">
+<input type="text" name="nome" id="nome" placeholder="Pesquise o nome do Cliente">
+<!--<input type="text" name="tempodetreino" id="tempodetreino" placeholder="Pesquise o tempo de treino do Cliente
+<!--<input type="text" name="email" id="email" placeholder="Pesquise o email do Cliente
+">-->
+<button type="submit" class="icon-btn" title="Editar" aria-label="Editar">
+<!--isso aqui é o desenho de uma lupa-->
+
+<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-
+linejoin="round">
+
+<circle cx="11" cy="11" r="8"/>
+<line x1="21" y1="21" x2="16.65" y2="16.65"/>
+</svg>
+<!--terminou-->
+</button>
+</form>
+</div>
+<!--fim do formulário de pesquisa-->
+
+  <div class="table-wrap" style="margin-top:14px;">
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Tempo de treino (em anos)</th>
+          <th>Email</th>
+          <th>Foto Do Cliente</th>
+          <th class="actions-cell">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% Clientes.forEach(Cliente => { %>
+        <tr>
+          <td><%= Cliente.nome %></td>
+          <td><%= Cliente.tempodetreino %></td>
+          <td><%= Cliente.email %></td>
+          <td><img src="<%=Cliente.foto%>" width="150" height="200"></td>
+          <td class="actions-cell">
+            <a href="/Cliente/edt/<%=Cliente.id %>" class="icon-btn" title="Editar" aria-label="Editar">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4 12.5-12.5z"/></svg>
+            </a>
+
+            <a href="/Cliente/del/<%= Cliente.id %>"
+               class="icon-btn" title="Excluir" aria-label="Excluir">
+               <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg>
+            </a>
+          </td>
+        </tr>
+        <% })%>
+
+        
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<%-include('../rodape.ejs')%>

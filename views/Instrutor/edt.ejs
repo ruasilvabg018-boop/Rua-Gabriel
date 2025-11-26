@@ -1,0 +1,29 @@
+<%-include('../cabecalho.ejs')%>
+ <header>
+        <h3>Editar Instrutor</h3>
+      </header>
+      <div class="content">
+        <form id="form-Instrutor" method="post" autocomplete="off" >
+          <div class="grid">
+            <div>
+              <label for="nome">Nome do Instrutor</label>
+              <input id="nome" value="<%=instrutor.nome%>" name="nome" type="text" required>  
+            </div>
+
+            <div>
+              <label for="salario">Salário do Instrutor</label>
+              <input id="salario" value="<%=instrutor.salario%>" name="salario" type="number" required>
+            </div>
+
+            <div>
+              <label for="temponaarea">Tempo na Área (em anos)</label>
+              <input id="temponaarea" value="<%=instrutor.temponaarea%>" name="temponaarea" type="number" required>
+            </div>
+          <footer>
+            <a type="button" class="btn ghost" id="btn-cancelar" href="/Instrutors/lst">Cancelar</a>
+            <button type="submit" class="btn primary">Editar Instrutor</button>
+          </footer>
+        </form>
+      </div>
+
+  <%-include('../rodape.ejs')%>
