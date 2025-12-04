@@ -89,14 +89,14 @@ ul {
 
 .nav-list {
     display: flex;
-    gap: 2rem;
+    gap: 17rem;
     padding: 1rem 0;
 }
 
 .nav-link {
     color: #374151;
     transition: color 0.3s;
-    font-weight: 500;
+    font-weight: 700;
 }
 
 .nav-link:hover {
@@ -194,8 +194,8 @@ ul {
 }
 
 .cliente-avatar {
-    width: 6rem;
-    height: 6rem;
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
     object-fit: cover;
     flex-shrink: 0;
@@ -459,11 +459,11 @@ ul {
         <!-- Aparelhos Section -->
         <section id="aparelhos" class="section">
             <h2 class="section-title">Nossos Aparelhos</h2>
-            <%Aparelhos.forEach(Aparelho=>{%>
             <div class="grid grid-3">
+                <%Aparelhos.forEach(Aparelho=>{%>
                 <div class="card card-aparelho">
                     <div class="aparelho-content">
-                        <img src="<%=Aparelho.foto%>">
+                        <img src="<%=Aparelho.foto%>" >
                         <div class="aparelho-info">
                     </div>
                     <div class="card-content">
@@ -473,187 +473,72 @@ ul {
                         
                     </div>
                 </div>
-<% })%>
+                </div>
+                <% })%>
+                </div>
                
+
         </section>
 
         <!-- Clientes Section -->
         <section id="clientes" class="section">
             <h2 class="section-title">Nossos Clientes</h2>
 
-            <%Clientes.forEach(Cliente=>{%>
             <div class="grid grid-3">
+                <%Clientes.forEach(Cliente=>{%>
                 <div class="card card-cliente">
                     <div class="cliente-content">
-                        <img src="<%=Cliente.foto%>">
+                        <img src="<%=Cliente.foto%> " width="150" height="150">
                         <div class="cliente-info">
                             <h3><%=Cliente.nome%></h3>
-                            <p>⏱️ <%=Cliente.tempodetreino%> anos</p>
+                            <p>⏱️ <%=Cliente.tempodetreino%> anos de treino</p>
                             <p>✉️ <%=Cliente.email %></p>
                         </div>
                     </div>
+              </div>
+                    <%})%>
                 </div>
-<%})%>
         </section>
 
         <!-- Instrutores Section -->
         <section id="instrutores" class="section">
-            <h2 class="section-title">Nossos Instrutores</h2>
-            <div class="grid grid-4">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1704223523169-52feeed90365?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYWxlJTIwZml0bmVzcyUyMHRyYWluZXJ8ZW58MXx8fHwxNzYzMDU5ODMxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" alt="Marcos Ferreira">
+            <h2 class="section-title">Nossos Instrutores👨‍💼</h2>
+
+            <div class="grid grid-3">
+                <%Instrutores.forEach(Instrutor=>{%>
+                <div class="card card-cliente">
+                    <div class="cliente-content">
+                        <img src="<%=Instrutor.foto%>" width="150" height="150">
+                  <div class="cliente-info">
+                        <h3><%=Instrutor.nome%></h3>
+                        <p>💰 <%=Instrutor.salario%></p>
+                        <p>🏆 <%=Instrutor.temponaarea%> anos de experiencia</p>
                     </div>
-                    <div class="card-content">
-                        <h3>Marcos Ferreira</h3>
-                        <p>💰 R$ 4.500,00</p>
-                        <p>🏆 8 anos de experiência</p>
-                    </div>
+                </div>
+                </div>
+                <%})%>
                 </div>
 
-                <div class="card">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1534368420009-621bfab424a8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmZW1hbGUlMjBwZXJzb25hbCUyMHRyYWluZXJ8ZW58MXx8fHwxNzYzMDU5ODMxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" alt="Fernanda Rodrigues">
-                    </div>
-                    <div class="card-content">
-                        <h3>Fernanda Rodrigues</h3>
-                        <p>💰 R$ 5.200,00</p>
-                        <p>🏆 10 anos de experiência</p>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1533560904424-a0c61dc306fc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaXRuZXNzJTIwdHJhaW5lciUyMG1hbnxlbnwxfHx8fDE3NjMwNjA0MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" alt="Lucas Almeida">
-                    </div>
-                    <div class="card-content">
-                        <h3>Lucas Almeida</h3>
-                        <p>💰 R$ 3.800,00</p>
-                        <p>🏆 5 anos de experiência</p>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1529516548873-9ce57c8f155e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHBlcnNvbmFsJTIwdHJhaW5lcnxlbnwxfHx8fDE3NjMwNjA0MTN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" alt="Beatriz Souza">
-                    </div>
-                    <div class="card-content">
-                        <h3>Beatriz Souza</h3>
-                        <p>💰 R$ 4.100,00</p>
-                        <p>🏆 6 anos de experiência</p>
-                    </div>
-                </div>
-            </div>
         </section>
 
         <!-- Mensalidades Section -->
         <section id="mensalidades" class="section">
             <h2 class="section-title center">Planos e Mensalidades</h2>
+            
             <div class="grid grid-4">
+                <%Mensalidades.forEach(Mensalidade=>{%>
                 <div class="card card-plano">
                     <div class="plano-content">
-                        <div class="plano-header">
-                            <h3>Mensal</h3>
-                            <div class="plano-preco">R$ 150,00</div>
-                            <p class="plano-adesao">📅 Qualquer dia do mês</p>
-                        </div>
-                        <div class="plano-beneficios">
-                            <ul>
-                                <li>✓ Acesso ilimitado</li>
-                                <li>✓ Todas as aulas coletivas</li>
-                                <li>✓ Avaliação física mensal</li>
-                                <li>✓ Sem fidelização</li>
-                            </ul>
+                        
+                            <img src="<%=Mensalidade.foto%>" width="150" height="150">
+                            <div class="plano-header">
+                            <h3><%=Mensalidade.plano%></h3>
+                              <p><%=Mensalidade.dataadesao%></p>
                         </div>
                         <button class="btn-plano">💳 Assinar Plano</button>
                     </div>
+                    <%})%>
                 </div>
-
-                <div class="card card-plano plano-destaque">
-                    <div class="plano-badge">⭐ Mais Popular</div>
-                    <div class="plano-content">
-                        <div class="plano-header">
-                            <h3>Trimestral</h3>
-                            <div class="plano-preco">R$ 399,00</div>
-                            <p class="plano-adesao">📅 Qualquer dia do mês</p>
-                        </div>
-                        <div class="plano-beneficios">
-                            <ul>
-                                <li>✓ Acesso ilimitado</li>
-                                <li>✓ Todas as aulas coletivas</li>
-                                <li>✓ Avaliação física mensal</li>
-                                <li>✓ Plano personalizado</li>
-                                <li>✓ Economia de 11%</li>
-                            </ul>
-                        </div>
-                        <button class="btn-plano btn-plano-destaque">💳 Assinar Plano</button>
-                    </div>
-                </div>
-
-                <div class="card card-plano">
-                    <div class="plano-content">
-                        <div class="plano-header">
-                            <h3>Semestral</h3>
-                            <div class="plano-preco">R$ 750,00</div>
-                            <p class="plano-adesao">📅 Qualquer dia do mês</p>
-                        </div>
-                        <div class="plano-beneficios">
-                            <ul>
-                                <li>✓ Acesso ilimitado</li>
-                                <li>✓ Todas as aulas coletivas</li>
-                                <li>✓ Avaliação física quinzenal</li>
-                                <li>✓ Plano personalizado</li>
-                                <li>✓ Nutricionista gratuito</li>
-                                <li>✓ Economia de 17%</li>
-                            </ul>
-                        </div>
-                        <button class="btn-plano">💳 Assinar Plano</button>
-                    </div>
-                </div>
-
-                <div class="card card-plano">
-                    <div class="plano-content">
-                        <div class="plano-header">
-                            <h3>Anual</h3>
-                            <div class="plano-preco">R$ 1.400,00</div>
-                            <p class="plano-adesao">📅 Qualquer dia do mês</p>
-                        </div>
-                        <div class="plano-beneficios">
-                            <ul>
-                                <li>✓ Acesso ilimitado</li>
-                                <li>✓ Todas as aulas coletivas</li>
-                                <li>✓ Avaliação física semanal</li>
-                                <li>✓ Plano personalizado premium</li>
-                                <li>✓ Nutricionista + Fisioterapeuta</li>
-                                <li>✓ 1 mês grátis</li>
-                                <li>✓ Economia de 22%</li>
-                            </ul>
-                        </div>
-                        <button class="btn-plano">💳 Assinar Plano</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="info-adesao">
-                <h3>Informações sobre Adesão</h3>
-                <div class="info-grid">
-                    <div class="info-item">
-                        <div class="info-icon">💳</div>
-                        <p class="info-title">Pagamento facilitado</p>
-                        <p class="info-desc">Cartão, PIX ou Boleto</p>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-icon">📅</div>
-                        <p class="info-title">Renovação automática</p>
-                        <p class="info-desc">Sem preocupação</p>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-icon">🔄</div>
-                        <p class="info-title">Flexibilidade</p>
-                        <p class="info-desc">Cancele quando quiser</p>
-                    </div>
-                </div>
-            </div>
         </section>
     </main>
 

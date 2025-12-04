@@ -3,7 +3,7 @@ import conexao from "../config/conexao.js";
 
 const InstrutorSchema = conexao.Schema({
     nome: { type: String, required: true },
-    salario: { type: Number, required: true },
+    salario: { type: String, required: true },
     temponaarea: { type: Number, required: true },
     foto:{type:Buffer,
          get: (valor) => {

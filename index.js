@@ -262,7 +262,9 @@ res.redirect("/Mensalidade/lst")
 app.get('/site', async (req, res) => {
     const Aparelhos = await Aparelho.find()
      const Clientes = await Cliente.find()
-    res.render("site/index", {Aparelhos, Clientes})
+     const Instrutores = await Instrutor.find()
+     const Mensalidades = await Mensalidade.find()
+    res.render("site/index", {Aparelhos, Clientes,Instrutores})
 })
 
 app.listen(3001);
