@@ -530,10 +530,12 @@ ul {
                 <div class="card card-plano">
                     <div class="plano-content">
                         
-                            <img src="<%=Mensalidade.foto%>" width="150" height="150">
+                            
                             <div class="plano-header">
-                            <h3><%=Mensalidade.plano%></h3>
-                              <p><%=Mensalidade.dataadesao%></p>
+                            <h3>Nome do Plano: <%=Mensalidade.nome%></h3>
+                            <h3>Preço: <%=Mensalidade.plano%></h3>
+                              <p>Data de vencimento: <%=Mensalidade.dataadesao.toLocaleDateString('pt-BR');%></p>
+                              <p>Data de vencimen</p>
                         </div>
                         <button class="btn-plano">💳 Assinar Plano</button>
                     </div>

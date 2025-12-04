@@ -264,7 +264,7 @@ app.get('/site', async (req, res) => {
      const Clientes = await Cliente.find()
      const Instrutores = await Instrutor.find()
      const Mensalidades = await Mensalidade.find()
-    res.render("site/index", {Aparelhos, Clientes,Instrutores})
+    res.render("site/index", {Aparelhos, Clientes,Instrutores,Mensalidades})
 })
 
 app.listen(3001);

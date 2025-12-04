@@ -1,6 +1,7 @@
 import conexao from "../config/conexao.js";
 
 const MensalidadeSchema = conexao.Schema({
+    nome: { type: String, required: true },
     plano: { type: Number, required: true },
     dataadesao: { type: Date, required: true },
 });

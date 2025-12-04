@@ -22,7 +22,7 @@
 
   <div style="flex: 0 0 auto; width: 70%;">
 <form action="" method="post">
-<input type="text" name="nome" id="nome" placeholder="Pesquise o preço do Plano(R$)">
+<input type="text" name="nome" id="nome" placeholder="Pesquise o nome do Plano">
 <!--<input type="text" name="dataadesao" id="dataadesao" placeholder="Pesquise a data de adesão do Plano">-->
 <button type="submit" class="icon-btn" title="Editar" aria-label="Editar">
 <!--isso aqui é o desenho de uma lupa-->
@@ -46,6 +46,7 @@ linejoin="round">
     <table>
       <thead>
         <tr>
+          <th>Nome do Plano</th>
           <th>Plano (R$)</th>
           <th>Data de Adesao</th>
           <th class="actions-cell">Ações</th>
@@ -54,6 +55,7 @@ linejoin="round">
       <tbody>
         <% Mensalidades.forEach(Mensalidade => { %>
         <tr>
+          <td><%= Mensalidade.nome %></td>
           <td><%= Mensalidade.plano %></td>
           <td><%= Mensalidade.dataadesao.toLocaleDateString('pt-BR');%></td>
           <td class="actions-cell">

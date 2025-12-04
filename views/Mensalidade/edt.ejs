@@ -6,6 +6,10 @@
         <form id="form-Mensalidade" method="post" autocomplete="off" >
           <div class="grid">
             <div>
+              <label for="nome">Nome do plano </label>
+              <input id="nome" value="<%=mensalidade.nome%>" name="nome" type="text" required>
+            </div>
+            <div>
               <label for="plano">Plano da Mensalidade</label>
               <input id="plano" value="<%=mensalidade.plano%>" name="plano" type="number" required>
             </div>
