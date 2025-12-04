@@ -259,7 +259,7 @@ const Mensalidades = await Mensalidade.findByIdAndDelete(req.params.id)
 res.redirect("/Mensalidade/lst")
 })
 
-app.get('/site', async (req, res) => {
+app.get('../site', async (req, res) => {
     const Aparelhos = await Aparelho.find()
      const Clientes = await Cliente.find()
      const Instrutores = await Instrutor.find()
